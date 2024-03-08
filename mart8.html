@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поздравление с 8 марта</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        #первый-экран {
+            height: 100vh;
+            background: url('https://placekitten.com/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, p, button {
+            margin: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #подпись {
+            display: none;
+            color: #333;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+</head>
+<body>
+    <div id="первый-экран">
+        <div>
+            <h1>Дорогие дамы!</h1>
+            <p>Поздравляем вас с восьмым марта!</p>
+            <p>Пусть этот день будет полон радости, улыбок и весеннего настроения.</p>
+            <button id="подписаться">Подписаться с любовью</button>
+            <p id="подпись">С любовью и уважением,<br>Ваше имя</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#подписаться").click(function() {
+                gsap.to("#подпись", { duration: 1, opacity: 1, y: 20, display: "block" });
+            });
+        });
+    </script>
+</body>
+</html>
